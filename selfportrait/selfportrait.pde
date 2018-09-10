@@ -1,18 +1,18 @@
-PShape face, shade1, shade2, shade3, shade4, shade5; //PShape = datatype for storing shapes
-PShape hair, hairL, hairR, hairBG;
-PShape eyes, eyeL, eyeR, pupilL, pupilR, lidL, lidR;
-PShape nose, nR, nL, nosL, nosR;
-PShape mouth, lip, lip2;
-PShape eyebrowL, eyebrowR;
-PShape glasses, glassesL, glassesR, bridge, handle;
-PShape body, shirt;
+PShape face, shades, shade1, shade2, shade3, shade4, //PShape = datatype for storing shapes
+       hair, hairL, hairR, hairBG,
+       eyes, eyeL, eyeR, pupilL, pupilR, lidL, lidR,
+       nose, nR, nL, nosL, nosR,
+       mouth, lip, lip2,
+       eyebrowL, eyebrowR,
+       glasses, glassesL, glassesR, bridge, handle,
+       body, shirt;
 Integer yAdjust, xAdjust; //final readjustment values
 
 void setup() {
   size(600, 700);
   background  (73,34,46);
   yAdjust = 70;
-  xAdjust = -7;
+  xAdjust = -7; //values help center the entire portrait
   
   hair = createShape(GROUP);
   hairL = createShape(); //left side of hair
@@ -52,12 +52,12 @@ void setup() {
   noStroke();
   face = createShape();
   face.beginShape();
-  face.fill(252,220,185);
-  face.vertex(208, 102);
+  face.fill(253,225,185); //will only be visible on top left "triangle" on face
+  face.vertex(208, 102); //top left corner
   face.vertex(200, 225);
   face.vertex(240, 310);
-  face.vertex(325, 360); //chin 1
-  face.vertex(390, 350); //chin 2
+  face.vertex(325, 360); //chin point 1
+  face.vertex(390, 350); //chin point 2
   face.vertex(420, 280);
   face.vertex(390, 160);
   face.vertex(320, 105);
@@ -91,7 +91,7 @@ void setup() {
   shade3.vertex(310, 240);
   shade3.endShape();
   
-  shade4 = createShape(); //shadow
+  shade4 = createShape(); //darker shadow
   shade4.beginShape();
   shade4.fill(250,215,170);
   shade4.vertex(310, 240);
@@ -101,8 +101,11 @@ void setup() {
   shade4.vertex(208, 102);
   shade4.endShape();
   
-  fill(253,225,185);
-  shade5 = createShape(TRIANGLE, 310, 240, 208, 102, 200, 225);
+  shades = createShape(GROUP);
+  shades.addChild(shade1);
+  shades.addChild(shade2);
+  shades.addChild(shade3);
+  shades.addChild(shade4);
   
   fill(255,255,240);
   eyes = createShape(GROUP);
@@ -142,7 +145,7 @@ void setup() {
   fill(255,220,162);
   nL = createShape(TRIANGLE, 342, 235, 345, 265, 320, 270); //order = top, mid, left
   fill(227,180,131);
-  nosL = createShape(TRIANGLE, 320, 270, 335, 267, 325, 265); //mid, right, left
+  nosL = createShape(TRIANGLE, 320, 270, 335, 267, 325, 265); // mid, right, left
   nosR = createShape(TRIANGLE, 360, 260, 358, 268, 350, 267); // right, mid, left
   nose.addChild(nL);
   nose.addChild(nR);
@@ -232,15 +235,11 @@ void setup() {
 
 void draw() {
   shape(hairBG, xAdjust, yAdjust);
-  shape(body, xAdjust, -10 + yAdjust); //final placement readjustments
+  shape(body, xAdjust, -10 + yAdjust); //+ additional readjustments
   shape(shirt, xAdjust, -10 + yAdjust);
   shape(hair, xAdjust, yAdjust);
   shape(face, xAdjust, yAdjust);
-  shape(shade1, xAdjust, yAdjust);
-  shape(shade2, xAdjust, yAdjust);
-  shape(shade3, xAdjust, yAdjust);
-  shape(shade4, xAdjust, yAdjust);
-  shape(shade5, xAdjust, yAdjust);
+  shape(shades, xAdjust, yAdjust);
   shape(eyes, -1 + xAdjust, -5 + yAdjust);
   shape(nose, xAdjust, yAdjust);
   shape(mouth, xAdjust, -25 + yAdjust);
