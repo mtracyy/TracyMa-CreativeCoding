@@ -107,7 +107,7 @@ void setup() {
   shades.addChild(shade3);
   shades.addChild(shade4);
   
-  fill(255,255,240);
+  fill(255,255,250);
   eyes = createShape(GROUP);
   eyeL = createShape(TRIANGLE, 300, 218, 285, 200, 250, 220); //order = right, mid, left
   eyeR = createShape(TRIANGLE, 406, 215, 399, 193, 370, 218); //order = right, mid, left
