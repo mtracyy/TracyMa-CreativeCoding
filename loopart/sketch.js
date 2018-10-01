@@ -33,7 +33,6 @@ function setup() {
 
     for (var j = 0; j < quad1X -1 ; j++) {
         // console.log(quad1X);
-        // redColor = (j +) *
         xPos = (j * spacingX) + 10;
         spacingX *= 0.976;
         // color += 1;
@@ -49,7 +48,7 @@ function setup() {
 
             ellipse(xPos, yPos, circlewidth, 18);
             circlewidth *= 0.993;
-            console.log(circlewidth);
+            // console.log(circlewidth);
         }
     }
 
@@ -61,8 +60,7 @@ function setup() {
     circlewidth = 18;
 
     for (j = quad1X; j > 1; j--) {
-        console.log(quad1X);
-        // redColor = (j +) *
+        // console.log(quad1X);
         xPos = (j * spacingX) * (0.5) + width/2.1;
         spacingX *= .970;
         // color -= 1;
@@ -79,12 +77,12 @@ function setup() {
 
             ellipse(xPos, yPos, circlewidth, 18);
             circlewidth *= 0.994;
-            console.log(circlewidth)
+            // console.log(circlewidth);
         }
     }
 
 
-    //bottom let
+    //bottom left
     color = 0;
     fill(color);
     spacingX = 23;
@@ -93,7 +91,6 @@ function setup() {
 
     for (j = 0; j < quad2X+1; j++) {
         // console.log(quad1X);
-        // redColor = (j +) *
         xPos = (j * spacingX) + 10;
         spacingX *= 0.978;
         // color -= 1;
@@ -110,7 +107,7 @@ function setup() {
 
             ellipse(xPos, yPos, circlewidth, 18);
             circlewidth *= 0.993;
-            console.log(circlewidth);
+            // console.log(circlewidth);
         }
     }
 
@@ -122,7 +119,7 @@ function setup() {
     circlewidth = 18;
 
     for (j = quad2X; j > 7 ; j--) {
-        console.log(quad1X);
+        // console.log(quad1X);
         xPos = (j * spacingX) * (0.5) + width/2.1;
         spacingX *= .965;
 
@@ -138,7 +135,7 @@ function setup() {
 
             ellipse(xPos, yPos, circlewidth, 18);
             circlewidth *= 0.993;
-            console.log(circlewidth)
+            // console.log(circlewidth);
         }
     }
 
