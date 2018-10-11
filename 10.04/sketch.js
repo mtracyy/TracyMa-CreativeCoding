@@ -1,3 +1,5 @@
+// my partner was Taline
+
 var color1;
 var color2;
 
@@ -38,23 +40,23 @@ function spiral(locX, locY, value) {
 
 //Tracy - draws spirals in diagonal/triangular formation
 function drawPath() {
-        for (var diagonalRow = 1; diagonalRow < 13; diagonalRow++) {
-            push();
-            translate(-42 * diagonalRow, 42 * diagonalRow);
+	for (var diagonalRow = 1; diagonalRow < 13; diagonalRow++) {
+		push();
+		translate(-42 * diagonalRow, 42 * diagonalRow);
 
-            for (var y=1; y < 16; y++) {
-                yOffset = y * 35;
-                for (var x = 1; x < 16; x++) {
-                    xOffset = x * 35;
-                    if (x===y) {
-                        spiral((width / 2.03) + xOffset, (height / 6) + yOffset, random(1,15)/10);
-                    }
-                }
-            }
+		for (var y=1; y < 16; y++) {
+			yOffset = y * 35;
+			for (var x = 1; x < 16; x++) {
+				xOffset = x * 35;
+				if (x===y) {
+					spiral((width / 2.03) + xOffset, (height / 6) + yOffset, random(1,15)/10);
+				}
+			}
+		}
 
-            pop();
+		pop();
 
-        }
+	}
 }
 
 //Taline - draws single flower
@@ -220,7 +222,7 @@ pop();
 
 function draw() {
 	push();
-	translate(0, -60); // Tracy - I added this translate (+nested pop/push) to move all your trees and flowers up to fill more empty space at top
+	translate(0, -60); // Tracy - I added this translate (+nested pop/push) to move the trees and flowers up to fill more empty space at top
 
 		tree();
 
