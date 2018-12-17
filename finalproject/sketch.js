@@ -63,17 +63,17 @@ function setup() {
     hue = map(time, 0, 23, 200, 230);
     if (time > 12) {
         sat = map(time, 0, 23, 350, 100);
-        cloudOpacity = map(time, 0, 23, 255, 80);
+        cloudOpacity = map(time, 0, 23, 300, 50);
     } else {
         sat = map(time, 0, 23, 80, 360);
-        cloudOpacity = map(time, 0, 23, 100, 255);
+        cloudOpacity = map(time, 0, 23, 60, 300);
     }
     if (time > 12) {
-        light = map(time, 12, 23, 290, 50);
+        light = map(time, 12, 23, 270, 50);
     } else if (time >= 0 && time <= 4) {
         light = map(time, 0, 4, 50, 120);
     } else {
-        light = map(time, 4, 12, 150, 300);
+        light = map(time, 4, 12, 150, 280);
     }
 
     currentColor = color(hue, sat, light);
@@ -84,9 +84,9 @@ function setup() {
     // this is code for if location is entered manually in query
     // baseURL = "https://api.openweathermap.org/data/2.5/weather?id=";
     // // query = "5194556"; //hunter park, PA
-    // // query = "5128581"; //new york, NY
+    // query = "5128581"; //new york, NY
     // // query = "4992263"; // eugene, OR
-    // query = "5879348"; // chugach state park, AL
+    // // query = "5879348"; // chugach state park, AL
 
     apiKey = "2b12b0c37d4fe53bbc3f4f765140097d";
 
@@ -259,10 +259,10 @@ function updateTheme(time) {
     hue = map(time, 0, 23, 200, 230);
     if (time > 12) {
         sat = map(time, 0, 23, 350, 100);
-        cloudOpacity = map(time, 0, 23, 255, 80);
+        cloudOpacity = map(time, 0, 23, 300, 50);
     } else {
         sat = map(time, 0, 23, 80, 360);
-        cloudOpacity = map(time, 0, 23, 100, 255);
+        cloudOpacity = map(time, 0, 23, 50, 300);
     }
     if (time > 12) {
         light = map(time, 12, 23, 290, 50);
@@ -430,7 +430,7 @@ function Cloud(x, y, size, sprite) {
 
     this.draw = function () {
         push();
-        tint(255, cloudOpacity);
+        tint(360, cloudOpacity);
         image(this.sprite, this.x, this.y, this.sprite.width*this.size, this.sprite.height*this.size);
         pop();
 
